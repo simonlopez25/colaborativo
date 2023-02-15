@@ -1,0 +1,842 @@
+<html><head>
+<title>HTML básico - I</title>
+<link rel="stylesheet" href="../../Fonetica/Apuntes/Componentes/Estilo_apuntes.css">
+<meta name="Keywords" content="tutorial html web">
+<meta name="Description" content="sencillo tutorial html para confeccionar páginas web">
+
+<!--BEGIN Pop-up Windows Script------------------------------------------>
+<script language="JavaScript">
+<!--
+// Copyright 1999 - 2001 by Ray Stott, Pop-up Windows Script ver 2.0
+// OK to use if this copyright is included
+// Script is available at http://www.crays.com/jsc          
+
+var popWin = null    // use this when referring to pop-up window
+var winCount = 0
+var winName = "popWin"
+function openPopWin(winURL, winWidth, winHeight, winFeatures, winLeft, winTop){
+  var d_winLeft = 20  // default, pixels from screen left to window left
+  var d_winTop = 20   // default, pixels from screen top to window top
+  winName = "popWin" + winCount++ //unique name for each pop-up window
+  closePopWin()           // close any previously opened pop-up window
+  if (openPopWin.arguments.length >= 4)  // any additional features? 
+    winFeatures = "," + winFeatures
+  else 
+    winFeatures = "" 
+  if (openPopWin.arguments.length == 6)  // location specified
+    winFeatures += getLocation(winWidth, winHeight, winLeft, winTop)
+  else
+    winFeatures += getLocation(winWidth, winHeight, d_winLeft, d_winTop)
+  popWin = window.open(winURL, winName, "width=" + winWidth 
+           + ",height=" + winHeight + winFeatures)
+  }
+function closePopWin(){    // close pop-up window if it is open 
+  if (navigator.appName != "Microsoft Internet Explorer" 
+      || parseInt(navigator.appVersion) >=4) //do not close if early IE
+    if(popWin != null) if(!popWin.closed) popWin.close() 
+  }
+function getLocation(winWidth, winHeight, winLeft, winTop){
+  return ""
+  }
+//-->
+</script><style type="text/css" id="operaUserStyle"></style>
+
+<script language="JavaScript1.2">  // for Netscape 4+ and IE 4+
+<!--
+function getLocation(winWidth, winHeight, winLeft, winTop){
+  var winLocation = ""
+  if (winLeft < 0)
+    winLeft = screen.width - winWidth + winLeft
+  if (winTop < 0)
+    winTop = screen.height - winHeight + winTop
+  if (winTop == "cen")
+    winTop = (screen.height - winHeight)/2 - 20
+  if (winLeft == "cen")
+    winLeft = (screen.width - winWidth)/2
+  if (winLeft>0 & winTop>0)
+    winLocation =  ",screenX=" + winLeft + ",left=" + winLeft	
+                + ",screenY=" + winTop + ",top=" + winTop
+  else
+    winLocation = ""
+  return winLocation
+  }
+//-->
+</script>
+<!--END Pop-up Windows Script------------------------------------------->
+<style type="text/css">:root zeus-ad, :root topadblock, :root span[id^="ezoic-pub-ad-placeholder-"], :root guj-ad, :root gpt-ad, :root div[jsdata*="CarouselPLA-"][data-id^="CarouselPLA-"], :root div[id^="zergnet-widget"], :root div[id^="yandex_ad"], :root div[id^="vuukle-ad-"], :root div[id^="sticky_ad_"], :root div[id^="rc-widget-"], :root div[id^="lazyad-"], :root div[id^="gpt_ad_"], :root div[id^="ezoic-pub-ad-"], :root div[id^="div-gpt-"], :root div[id^="dfp-ad-"], :root div[id^="adspot-"], :root div[id^="ads300_250-widget-"], :root div[id^="ads300_100-widget-"], :root div[id^="ads250_250-widget-"], :root div[id^="adrotate_widgets-"], :root div[id^="adngin-"], :root div[id^="_vdo_ads_player_ai_"], :root div[id*="ScriptRoot"], :root div[id*="MarketGid"], :root div[data-native_ad], :root div[data-mpu1], :root div[data-insertion], :root div[data-id-advertdfpconf], :root div[data-google-query-id], :root hl-adsense, :root div[data-contentexchange-widget], :root div[data-content="Advertisement"], :root div[data-alias="300x250 Ad 2"], :root div[data-alias="300x250 Ad 1"], :root div[data-adzone], :root div[data-adunit-path], :root div[data-ad-wrapper], :root div[data-ad-targeting], :root div[data-ad-placeholder], :root div[class^="native-ad-"], :root div[data-dfp-id], :root div[class^="kiwi-ad-wrapper"], :root div[class^="Adstyled__AdWrapper-"], :root div[aria-label="Ads"], :root display-ads, :root display-ad-component, :root aside[id^="adrotate_widgets-"], :root article.ad, :root ark-top-ad, :root app-advertisement, :root app-ad, :root amp-fx-flying-carpet, :root amp-embed[type="taboola"], :root amp-connatix-player, :root amp-ad-custom, :root ad-shield-ads, :root ad-desktop-sidebar, :root a[href^="https://banners.livepartners.com/"], :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[href^="https://yogacomplyfuel.com/"], :root [href^="https://zstacklife.com/"] img, :root a[href^="https://t.aslnk.link/"], :root a[href^="https://www.sweetdeals.com"], :root div[class^="Display_displayAd"], :root a[href^="https://www.bang.com/?aff="], :root a[href^="https://www.sheetmusicplus.com/?aff_id="], :root a[href^="https://bngpt.com/"], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="https://www.mypornstarcams.com/landing/click/"], :root a[href^="https://financeads.net/tc.php?"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="https://www.kingsoffetish.com/tour?partner_id="], :root a[href^="https://www.infowarsstore.com/"] > img, :root a[href^="https://t.grtyi.com/"], :root a[href^="https://www.highperformancecpmgate.com/"], :root a[href^="https://www.highcpmrevenuenetwork.com/"], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://www.financeads.net/tc.php?"], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root [data-template-type="nativead"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://webroutetrk.com/"], :root a[href^="https://wantopticalfreelance.com/"], :root a[href^="https://twinrdsyn.com/"], :root a[href^="https://tsartech.g2afse.com/"], :root a[href^="https://tragency-clesburg.icu/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.afcpatrk.com/"], :root a[href^="https://track.adform.net/"], :root a[href^="https://torguard.net/aff.php"] > img, :root [data-role="tile-ads-module"], :root a[href^="https://adsrv4k.com/"], :root a[href^="https://go.xlviirdr.com"], :root a[href^="https://thaudray.com/"], :root a[href^="https://taghaugh.com/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://go.trackitalltheway.com/"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="https://syndication.exoclick.com/"], :root a[href^="https://syndication.dynsrvtbg.com/"], :root a[href^="https://streamate.com/landing/click/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="https://static.fleshlight.com/images/banners/"], :root a[href^="https://refpazkjixes.top/"], :root a[href^="https://go.strpjmp.com/"], :root a[href^="https://refpa4903566.top/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="https://serve.awmdelivery.com/"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root [href^="https://r.kraken.com/"], :root a[href^="https://mmwebhandler.aff-online.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root iframe[id^="google_ads_frame"], :root a[href^="https://pb-track.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root div[id^="ad_position_"], :root a[href^="https://ovb.im/"], :root div[id^="ad-div-"], :root a[href^="https://newbinotracs.com/"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root [href^="https://stvkr.com/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root [href^="https://www.herbanomic.com/"] > img, :root a[href^="https://maymooth-stopic.com/"], :root a[href^="https://loboclick.com"], :root [href^="https://routewebtk.com/"], :root a[href^="https://see.kmisln.com/"], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="https://lobimax.com/"], :root a[href^="https://lead1.pl/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://ads.leovegas.com/redirect.aspx?"], :root a[href^="https://land.brazzersnetwork.com/landing/"], :root a[href^="https://juicyads.in/"], :root a[href^="https://itubego.com/video-downloader/?affid="], :root a[href^="https://iqbroker.com/"][href*="?aff="], :root a[href^="https://incisivetrk.cvtr.io/click?"], :root a[href^="https://iactrivago.ampxdirect.com/"], :root [data-revive-zoneid], :root a[href^="https://googleads.g.doubleclick.net/pcs/click"], :root a[href^="https://clk.wrenchsound.store/"], :root a[href^="https://go.zybrdr.com"], :root [href^="http://join.michelle-austin.com/"], :root a[href^="https://go.xxxiijmp.com"], :root a[href^="https://go.xtbaffiliates.com/"], :root a[href^="https://ismlks.com/"], :root [href^="https://www.mypillow.com/"] > img, :root a[href^="https://azpresearch.club/"], :root a[href^="https://go.xlirdr.com"], :root [data-css-class="dfp-inarticle"], :root .card-captioned.crd > .crd--cnt > .s2nPlayer, :root a[href^="https://go.tmrjmp.com"], :root a[href^="https://go.skinstrip.net"][href*="?campaignId="], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="//lambingsyddir.com/"], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://go.goaserv.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://go.ebrokerserve.com/"], :root a[href^="https://go.dmzjmp.com"], :root a[href^="https://go.admjmp.com/"], :root a[href^="https://www.nutaku.net/signup/landing/"], :root [href^="https://kingered-banctours.com/"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a-ad, :root a[href^="https://affiliate.rusvpn.com/click.php?"], :root a[href^="https://geniusdexchange.com/"], :root a[href^="https://go.gldrdr.com/"], :root [id^="ad_sky"], :root a[href^="https://funkydaters.com/"], :root a[href^="https://frameworkdeserve.com/"], :root a[href^="https://www.mrskin.com/account/"], :root bottomadblock, :root a[href^="https://fertilitycommand.com/"], :root div[data-native-ad], :root a[href^="https://engine.trackingdesks.com/"], :root [href^="https://totlnkcl.com/"], :root a[href^="https://www.adskeeper.com"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root [href^="https://www.reimageplus.com/"], :root a[href^="https://engine.phn.doublepimp.com/"], :root a[href^="https://engine.blueistheneworanges.com/"], :root a[href^="https://clixtrac.com/"], :root div.fadeInDown[id$="____equal"][class$="____equal"], :root a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"], :root a[href^="https://join.dreamsexworld.com/"], :root a[href^="https://click.linksynergy.com/fs-bin/"], :root AD-TRIPLE-BOX, :root a[href^="https://click.hoolig.app/"], :root a[href^="https://track.totalav.com/"], :root img[src^="https://images.purevpnaffiliates.com"], :root a[href^="https://porntubemate.com/"], :root a[href^="http://www.gfrevenge.com/landing/"], :root a[href^="https://clickadilla.com/"], :root a[href^="https://click.dtiserv2.com/"], :root a[href^="https://go.xlvirdr.com"], :root a[href^="https://claring-loccelkin.com/"], :root [class^="s2nPlayer"], :root a[href^="https://chaturbate.jjgirls.com/?track="], :root a[href^="https://www.nudeidols.com/cams/"], :root a[href^="https://chaturbate.com/in/?track="], :root a[href^="https://www.onlineusershielder.com/"], :root a[href^="https://chaturbate.com/in/?tour="], :root a[href^="https://cams.imagetwist.com/in/?track="], :root a[href^="https://camfapr.com/landing/click/"], :root a[href^="https://cam4com.go2cloud.org/"], :root a[href^="https://affcpatrk.com/"], :root a[href^="https://bongacams2.com/track?"], :root a[href^="https://bluedelivery.pro/"], :root #topstuff > #tads, :root a[href^="https://black77854.com/"], :root a[href^="https://burpee.xyz/"], :root a[href^="https://ndt5.net/"], :root a[href^="https://batheunits.com/"], :root a[href^="https://adultfriendfinder.com/go/page/landing"], :root a[href^="https://www.sugarinstant.com/?partner_id="], :root a[href^="https://m.do.co/c/"] > img, :root [href="https://masstortfinancing.com"] img, :root a[href^="https://bongacams10.com/track?"], :root a[href^="https://albionsoftwares.com/"], :root a[href^="https://t.hrtye.com/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://intenseaffiliates.com/redirect/"], :root a[href^="https://aweptjmp.com/"], :root a[href^="https://ads.ad4game.com/"], :root [id^="google_ads_iframe"], :root a[href^="https://syndication.optimizesrv.com/"], :root a[href^="https://affpa.top/"], :root a[href^="https://adnetwrk.com/"], :root a[href^="https://adjoincomprise.com/"], :root [href^="http://misslinkvocation.com/"], :root a[href^="https://adclick.g.doubleclick.net/"], :root a[href^="https://adswick.com/"], :root a[href^="//go.xlviiirdr.com"], :root a[href^="https://a.bestcontentoperation.top/"], :root [data-m-ad-id], :root a[href^="https://a-ads.com/"], :root [href="https://ourgoldguy.com/contact/"] img, :root a[href^="https://brightadnetwork.com/"], :root [href^="https://www.avantlink.com/click.php"] img, :root iframe[src^="https://pagead2.googlesyndication.com/"], :root a[href^="http://www.onwebcam.com/random?t_link="], :root a[href^="https://ad.kubiccomps.icu/"], :root a[href^="http://trk.globwo.online/"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href^="http://traffic.tc-clicks.com/"], :root a[href^="http://tour.mrskin.com/"], :root a[href^="https://join.virtualtaboo.com/track/"], :root a[href^="http://https://www.get-express-vpn.com/offer/"], :root a[href^="https://cagothie.net/"], :root div[id^="google_dfp_"], :root a[href^="http://googleads.g.doubleclick.net/pcs/click"], :root a[href^="https://awentw.com/"], :root a[href^="https://www.googleadservices.com/pagead/aclk?"], :root a[href^="http://www.mrskin.com/tour"], :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="http://deloplen.com/"], :root a[href^="https://agacelebir.com/"], :root a[href^="https://spygasm.com/track?"], :root a[href^="http://d2.zedo.com/"], :root .rc-cta[data-target], :root [href^="http://go.cm-trk2.com/"], :root a[href^="http://adtrack1.club/"], :root a[href^="http://click.payserve.com/"], :root a[href^="https://porngames.adult/?SID="], :root [href^="http://clicks.totemcash.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root a[href^="https://misspkl.com/"], :root a[href^="https://landing1.brazzersnetwork.com"], :root #slashboxes > .deals-rail, :root [href^="http://globsads.com/"], :root [href^="https://www.brighteonstore.com/products/"] img, :root a[href^="http://bc.vc/?r="], :root .trc_rbox_border_elm .syndicatedItem, :root a[href^="http://www.onclickmega.com/jump/next.php?"], :root a[href^="http://adf.ly/?id="], :root [href^="http://homemoviestube.com/"], :root a[href^="http://ad.doubleclick.net/"], :root .commercial-unit-mobile-top .jackpot-main-content-container > .UpgKEd + .nZZLFc > .vci, :root a[href^="//syndication.dynsrvtbg.com/"], :root a[href^="https://a2.adform.net/"], :root a[href^="http://static.fleshlight.com/images/banners/"], :root a[href^="https://a.adtng.com/"], :root a[href^="//pubads.g.doubleclick.net/"], :root div[data-adname], :root a[href^="https://thechleads.pro/"], :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="], :root a[href^="https://tour.mrskin.com/"], :root a[href^="http://allaptair.club/"], :root a[href^="//go.eabids.com/"], :root a[href^="https://go.nordvpn.net/aff"] > img, :root [data-d-ad-id], :root a[href*=".engine.adglare.net/"], :root [data-dynamic-ads], :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root [data-ad-width], :root [href^="https://join.playboyplus.com/track/"], :root a[data-url^="http://paid.outbrain.com/network/redir?"] + .author, :root a[href^="https://axdsz.pro/"], :root a[href^="http://bodelen.com/"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root [href^="https://cpa.10kfreesilver.com/"], :root a[href^="https://a.bestcontentfood.top/"], :root a[href^="https://reinstandpointdumbest.com/"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root [href^="https://goldforyourfuture.com/clk.trk"] img, :root a[href^="http://wct.link/"], :root [href^="https://infinitytrk.com/"], :root [onclick^="location.href='http://www.reimageplus.com"], :root [id^="section-ad-banner"], :root .commercial-unit-mobile-top > div[data-pla="1"], :root [id^="chp_ads_block"], :root a[href^="https://go.julrdr.com/"], :root .trc_rbox_div .syndicatedItemUB, :root [href^="https://zone.gotrackier.com/"], :root [href^="https://www.targetingpartner.com/"], :root [href^="https://detachedbates.com/"], :root a[href^="https://fourwhenstatistics.com/"], :root [href^="https://www.restoro.com/"], :root div[id^="ad-position-"], :root a[href^="http://adultfriendfinder.com/go/page/landing"], :root a[href^="http://affiliate.glbtracker.com/"], :root a[href^="https://leg.xyz/?track="], :root div[id^="crt-"][style], :root a[href^="http://adultgames.xxx/"], :root a[href^="https://traffic.bannerator.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root [href^="https://www.mypatriotsupply.com/"] > img, :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"], :root [href^="https://secure.bmtmicro.com/servlets/"], :root a[href^="https://losingoldfry.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root a[href^="https://oackoubs.com/"], :root a[href^="https://awptjmp.com/"], :root a[href^="https://go.goasrv.com/"], :root .commercial-unit-mobile-top > .v7hl4d, :root [href^="http://mypillow.com/"] > img, :root a[href^="http://bongacams.com/track?"], :root a[href^="https://fleshlight.sjv.io/"], :root [data-ad-manager-id], :root a[href^="https://promo-bc.com/"], :root a[href^="https://clicks.pipaffiliates.com/"], :root [href^="https://noqreport.com/"] > img, :root a[href^="https://go.hpyjmp.com"], :root ADS-RIGHT, :root [href^="https://mystore.com/"] > img, :root [href^="https://mypatriotsupply.com/"] > img, :root [href^="https://mylead.global/stl/"] > img, :root #leader-companion > a[href], :root a[href^="https://transfer.xe.com/signup/track/redirect?"], :root .vid-present > .van_vid_carousel__padding, :root a[href^="https://go.xxxijmp.com"], :root [href^="https://istlnkcl.com/"], :root [href^="https://www.hostg.xyz/"] > img, :root .section-subheader > .section-hotel-prices-header, :root [href^="https://go.affiliatexe.com/"], :root [href^="https://go.4rabettraff.com/"], :root [href^="https://glersakr.com/"], :root a[href^="https://1startfiledownload1.com/"], :root a[href^="https://wittered-mainging.com/"], :root [href^="https://engine.gettopple.com/"], :root [href^="https://awbbjmp.com/"], :root a[href^="https://k2s.cc/pr/"], :root [href^="https://affect3dnetwork.com/track/"], :root a[href^="https://go.currency.com/"], :root [href^="http://www.mypillow.com/"] > img, :root [href^="https://v.investologic.co.uk/"], :root [href^="https://cipledecline.buzz/"], :root [href^="http://join.trannies-fuck.com/"], :root [href^="http://www.fleshlightgirls.com/"], :root div[id^="div-ads-"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root div[data-role="sidebarAd"], :root [href^="https://join3.bannedsextapes.com"], :root div[data-spotim-slot], :root [href^="https://antiagingbed.com/discount/"] > img, :root a[href^="https://go.247traffic.com/"], :root [href^="https://join.girlsoutwest.com/"], :root [href^="http://trafficare.net/"], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="https://adserver.adreactor.com/"], :root [href^="http://join.shemalesfromhell.com/"], :root [id^="ad_slider"], :root a[href^="http://www.adultdvdempire.com/?partner_id="][href*="&utm_"], :root [href^="http://join.shemale.xxx/"], :root [href^="https://ilovemyfreedoms.com/landing-"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root .trc_rbox .syndicatedItem, :root a[href^="http://cam4com.go2cloud.org/aff_c?"], :root a[href^="https://cpmspace.com/"], :root [href^="https://freecourseweb.com/"] > .sitefriend, :root [class^="chp_ads_block"], :root a[href^="https://ads.planetwin365affiliate.com/redirect.aspx?"], :root [href^="http://join.rodneymoore.com/"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href*=".trust.zone"], :root [href^="https://shrugartisticelder.com"], :root [href^="https://go.xlrdr.com"], :root [name^="google_ads_iframe"], :root [href^="https://safer-redirection.com"], :root [href^="https://optimizedelite.com/"] > img, :root [data-name="adaptiveConstructorAd"], :root [href^="//ngeoziadiyc4hi2e.com/"], :root a[href^="https://go.xxxjmp.com"], :root [data-desktop-ad-id], :root [href^="https://wct.link/"], :root [href^="https://traffserve.com/"], :root #kt_player > a[target="_blank"], :root [href="https://www.masstortfinancing.com/"] > img, :root .ob_container .item-container-obpd, :root [id^="div-gpt-ad"], :root [href^="https://mypillow.com/"] > img, :root [href^="https://ad.admitad.com/"], :root a[href^="https://u.expresstech.io/"], :root [href="https://jdrucker.com/gold"] > img, :root a[href^="https://www.iyalc.com/"], :root a[href^="https://track.ultravpn.com/"], :root [href^="https://goldcometals.com/clk.trk"], :root [data-mobile-ad-id], :root a[href^="http://tc.tradetracker.net/"] > img, :root a[href^="https://www.geekbuying.com/dynamic-ads/"], :root a[href^="http://affiliates.thrixxx.com/"], :root #searchResultsList > div > div[onclick$="'inline.ad'});"], :root a[href^="https://go.xlivrdr.com"], :root [data-freestar-ad], :root [data-ez-name], :root AMP-AD, :root [data-ad-cls], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root [id^="ad-wrap-"], :root div[id^="taboola-stream-"], :root [href^="https://go.astutelinks.com/"], :root [onclick*="content.ad/"], :root [href^="http://residenceseeingstanding.com/"], :root div[data-adunit], :root app-large-ad, :root [href^="https://turtlebids.irauctions.com/"] img, :root [class^="amp-ad-"], :root a[href^="http://go.xtbaffiliates.com/"], :root .grid > .container > #aside-promotion, :root DFP-AD, :root AD-SLOT, :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root [href^="https://click2cvs.com/"], :root .trc_related_container div[data-item-syndicated="true"], :root [href^="http://join.shemalepornstar.com/"], :root a[href^="https://go.xlviiirdr.com"], :root .trc_rbox_div .syndicatedItem, :root [data-ad-module], :root a[href^="https://go.cmtaffiliates.com/"], :root [href^="https://trackfin.asia/"], :root .plistaList > .plista_widget_underArticle_item[data-type="pet"], :root a[href*="//lkstrck2.com/"], :root .plistaList > .itemLinkPET, :root atf-ad-slot, :root .commercial-unit-mobile-top .jackpot-main-content-container > .UpgKEd + .nZZLFc > div > .vci, :root a[href^="http://partners.etoro.com/"], :root [data-advadstrackid], :root [href^="https://affiliate.fastcomet.com/"] > img, :root #atvcap + #tvcap > .mnr-c > .commercial-unit-mobile-top, :root a[href^="https://traffdaq.com/"], :root a[href^="https://tm-offers.gamingadult.com/"], :root [class^="div-gpt-ad"], :root a[href^="https://bs.serving-sys.com"], :root a[href^="https://join.virtuallust3d.com/"], :root #taw > .med + div > #tvcap > .mnr-c:not(.qs-ic) > .commercial-unit-mobile-top, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root [data-adblockkey], :root [href^="https://www.cloudways.com/en/?id"] { display: none !important; }</style></head>
+<body onunload="closePopWin()">
+<table width="600" cellspacing="0" cellpadding="5" align="center">
+<tbody><tr><td class="titulo">HTML básico - I</td></tr>
+<tr><td class="subtitulo">Cómo crear una página web</td></tr>
+</tbody></table>
+
+<br><br>
+
+
+<p class="abstract">En este primer capítulo, presentaremos las nociones básicas del lenguaje HTML. Con una utilización inteligente de las etiquetas HTML más 
+sencillas, pueden lograrse documentos web de calidad suficiente. Al fin y al cabo, no debe olvidarse que lo importante, tanto en un papel como en Internet, sigue 
+siendo el contenido.</p>
+<div class="indice">
+<ol>
+<li><a href="#1">Introducción</a></li>
+<li><a href="#2">La estructura mínima de un documento HTML</a></li>
+<li><a href="#3">El texto básico de un documento HTML</a></li>
+<li><a href="#4">Los párrafos de un documento HTML</a></li>
+<li><a href="#5">Los enlaces de un documento HTML</a></li>
+</ol>
+</div>
+
+<br><br>
+
+<h1><a name="1"></a>1. Introducción</h1>
+<ul>
+<li>HTML<a name="ll1"></a><a href="#n1"><sup>1</sup></a> es un lenguaje universal, que funciona en cualquier plataforma (Windows, Macintosh, Unix, OS/2, etc.) y 
+con cualquier navegador o browser (Netscape, Internet Explorer, Mozilla Firefox, etc.). El precio que paga por su universalidad es su poca sofisticación, puesto 
+que no es otra cosa que el viejo formato ASCII<a name="ll2"></a><a href="#n2"><sup>2</sup></a> (y con 7 bits en lugar de ocho, por lo que ni tan siquiera tiene 
+acentos ni otros caracteres especiales).</li>
+<li>Por tanto, para que un documento HTML sea algo más que simples caracteres básicos, debe contener, además de dicho texto, una serie de instrucciones para el 
+browser que lo va a reproducir: estas intrucciones se denominan etiquetas o tags y se distinguen del texto porque van entre guiones 
+(<span class="B">&lt; &gt;</span>)<a name="ll3"></a><a href="#n3"><sup>3</sup></a>. Estas etiquetas contienen todo el resto de la información de la página web.</li>
+<li>Por tanto, si un documento HTML no es más que texto ASCII (parte sin guiones y parte entre guiones: las etiquetas), cualquier documento web, hasta el más 
+sofisticado, puede escribirse directamente desde un sencillo programa básico de texto, como el Cuaderno de Notas (<i>Notepad</i>) de Windows, por ejemplo.</li>
+<li>Sin embargo, escribir un documento complejo de esta manera exige un conocimiento exhaustivo de las numerosísimas etiquetas existentes y sus normas de 
+utilización; para evitar esta dificultad, hay una serie de programas denominados comúnmente editores de HTML (desde el Composer al Dreamweaver, pasando por tantos 
+otros), que permiten al usuario componer una página (es decir, generar etiquetas HTML) desde un interfaz más o menos parecido al de un procesador de textos.</li>
+<li>A la hora de crear una página web, y aunque utilicemos un editor de HTML, es casi imprescindible entender la disposición del etiquetado de un documento y 
+manejar siquiera las etiquetas más elementales. Son varias las razones que pueden aducirse para ello:
+<ol>
+<li>Los editores de HTML no son siempre herramientas perfectas, sobre todo cuando ha habido muchas modificaciones durante el proceso de creación. Con bastante 
+frecuencia se hará necesario consultar el código completo, con las etiquetas HTML (lo que se suele denominar <b>código fuente</b> o <b>código madre</b>) para 
+corregir las disfunciones.</li>
+<li>Tal vez la mejor manera de aprender a diseñar páginas web es observar las páginas de los demás, cuyos códigos fuente están siempre disponibles para ser 
+imitados (o incluso copiados, técnicamente, al menos). Pero, para ello, es necesario entenderlos.</li>
+<li>Los mismos editores HTML manejan términos propios del lenguaje HTML (<i>heading</i>, <i>cellspacing</i>, etc.), que es preciso comprender.</li>
+<li>Es necesario un buen conocimiento de HTML para insertar otros códigos más potentes, como los de Javascript, por ejemplo.</li>
+</ol></li>
+<li>El objetivo de este documento es aprender a componer una sencilla página web desde el más básico de los programas de texto disponibles en Windows: el Cuaderno 
+de Notas.<a name="ll4"></a><a href="#n4"><sup>4</sup></a> De esta manera, seremos capaces de entender y manejar los códigos fuente de las páginas más complejas.</li>
+</ul>
+
+
+
+<br><br>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr>
+<td align="right"><a href="#top"><img src="../../Componentes/top.jpg" alt="volver al inicio" width="15" height="15" border="0"><br>
+<div class="top">inicio</div></a></td></tr></tbody></table>
+
+<a name="2"><h1>2. Esquema mínimo de un documento HTML</h1></a>
+<ul>
+<li>Un documento HTML comienza siempre con la etiqueta <span class="B">&lt;HTML&gt;</span><a name="ll5"></a><a href="#n5"><sup>5</sup></a>, que indica que el 
+documento en cuestión está construido con dicho lenguaje.</li>
+<li>La mayoría de las etiquetas son pareadas, es decir, <span class="B">&lt;...&gt;</span> corresponde al principio de la acción y 
+<span class="B">&lt;/...&gt;</span> indica el fin de dicha acción.</li>
+<li>Por tanto, una página web estará siempre contenida entre las etiquetas <span class="B">&lt;HTML&gt;</span> y <span class="B">&lt;/HTML&gt;</span>.</li>
+<li>Por otra parte, todo documento HTML consta de dos partes: la cabecera (<b>head</b>) y el cuerpo del documento (<b>body</b>).
+	<ol>
+	<li>La cabecera contiene básicamente información destinada al browser (o navegador), que queda oculta al usuario. Su etiqueta (pareada) es 
+	<span class="B">&lt;HEAD&gt;</span>.</li>
+	<li>El cuerpo es el documento que ve el usuario. Su etiqueta (pareada) es <span class="B">&lt;BODY&gt;</span>.</li>
+	</ol>
+	</li>
+<li>Ya estamos en condiciones de componer nuestra primera página web. Basta con escribir las siguientes etiquetas en nuestro editor de texto y salvar el resultado 
+con la extensión <b>*.HTML</b> o <b>*.HTM</b>:</li>
+</ul>
+
+<div align="center">
+<table width="35%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 1</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&nbsp;&nbsp;&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&nbsp;&nbsp;&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&nbsp;&nbsp;&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>&nbsp;&nbsp;&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_01.html&quot;, 400, 200, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+<ul>
+<li>He introducido una pequeña tabulación a la hora de escribir las etiquetas de cabecera y cuerpo, simplemente para facilitar su compresión gráfica, puesto que 
+esta cuestión es totalmente indiferente. El resultado no variaría de haber colocado las etiquetas de cualquier otra manera. Por ejemplo:</li>
+</ul>
+
+<div align="center"><table width="35%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 1: Variantes de escritura</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="tabla"><td><hr size="0"></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;&lt;HEAD&gt;&lt;/HEAD&gt;&lt;BODY&gt;&lt;/BODY&gt;&lt;/HTML&gt;</td></tr>
+<tr class="tabla"><td><hr size="0"></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;<br>&lt;HEAD&gt;&lt;/HEAD&gt;<br>&lt;BODY&gt;&lt;/BODY&gt;<br>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_01.html&quot;, 400, 200, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+<ul>
+<li>Esta primera página web está, lógicamente, vacía, pero es perfectamente operativa. Para modificarla, basta con modificar sus códigos en el editor de texto. No 
+hace falta cerrar para ello el navegador: una vez modificado –y salvado– el fichero, basta con utilizar el comando <b>Actualizar</b> (o <b>Refresh</b>) para ver 
+los cambios.</li>
+<li>Al visualizar los resultados del <a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_01.html&quot;, 400, 200, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ejemplo 1</a>, en la barra 
+de título de la ventana correspondiente sólo aparece el nombre del navegador (con Netscape) o la trayectoria completa del archivo (con Explorer). Esto sucede 
+porque nuestro documento no posee un título propio. Para crearlo, debemos introducir una nueva etiqueta (pareada) en la cabecera: 
+<span class="B">&lt;TITLE&gt;</span>. Nuestro página web podría quedar, por tanto, así:</li>
+</ul>
+
+<div align="center"><table width="35%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 2</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;TITLE&gt;Ejemplo 2&lt;/TITLE&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_02.html&quot;, 400, 200, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+<ul>
+<li>Ya sabemos crear el esqueleto de una página web. La siguiente tarea será aprender a introducir texto (entre los tags <span class="B">&lt;BODY&gt;</span> y 
+<span class="B">&lt;/BODY&gt;</span>) y controlar sus etiquetas elementales.</li></ul>
+
+
+<br><br>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr>
+<td align="right"><a href="#top"><img src="../../Componentes/top.jpg" alt="volver al inicio" width="15" height="15" border="0"><br>
+<div class="top">inicio</div></a></td></tr></tbody></table>
+
+
+<a name="3"></a><h1>3. El texto básico de un documento HTML</h1>
+<ul>
+<li>El texto básico de un documento HTML puede escribirse sin etiquetas. Cada navegador lo visualiza entonces con el tipo y tamaño de caracteres escogidos en su 
+configuración por defecto, e introduce un salto de línea cuando los caracteres alcanzan el borde de la ventana.</li>
+<li>Para dominar las cuestiones de formato (de caracteres, de párrafo, etc.) es necesario utilizar las etiquetas correspondientes.</li></ul>
+
+<a name="31"></a><h2>3.1. La etiqueta básica</h2>
+<ul>
+<li>La etiqueta básica, que controla el tipo de fuente utilizado, es <span class="B">&lt;FONT&gt;</span>.</li>
+<li><span class="B">&lt;FONT&gt;</span> es una etiqueta pareada. Por tanto, afecta a los caracteres introducidos entre <span class="B">&lt;FONT&gt;</span> y 
+<span class="B">&lt;/FONT&gt;</span>. Pero sin más especificaciones, la etiqueta aún no sirve para nada.</li>
+<li>Se puede especificar <b>el tipo de letra</b> (es decir, la fuente de caracteres) añadiéndolo a la etiqueta, de la siguiente manera (en este caso, la fuente 
+escogida es Arial): <span class="B">&lt;FONT FACE="Arial"&gt;...&lt;/FONT&gt;</span>.</li>
+<li>Se puede especificar <b>el color de la fuente</b> con la etiqueta <span class="B">&lt;FONT COLOR="?"&gt;...&lt;/FONT&gt;</span>. Para especificar los 
+colores, conviene saber al menos lo siguiente:
+	<ol>
+	<li>Cada color posee su correspondiente código.</li>
+	<li>Hay dos códigos: hexadecimal –lo más habitual– o RGB. En ambos casos se trata de expresar las proporciones de tres colores básicos: rojo, 
+	verde y azul.</li>
+	<li>Los valores hexadecimales de los tres colores se expresan de la siguiente manera: 
+		<ol>
+		<li>Rojo: color:#ff0000;</li>
+		<li>Verde: color:#00ff00;</li>
+		<li>Azul: color:#0000ff;</li>
+		</ol> 
+ 	</li><li>Los mismos colores, expresados con los valores RGB (red, green, blue), son los siguientes: 
+		<ol>
+		<li>Rojo: color:rgb(255,0,0);</li>
+		<li>Verde: color:rgb(0,255,0);</li>
+		<li>Azul: color:rgb(0,0,255);</li>
+		</ol>
+	</li><li>Todos los colores se expresan mediante combinaciones de estos tres colores básicos. Existen muchos programas que proporcionan los valores de todos los 
+	colores que el usuario puede componer. También en internet existen muchas páginas con los 
+	<a href="http://html-color-codes.info/codigos-de-colores-hexadecimales/" target="_blank">Códigos de colores</a>.</li> 
+	<li>Los colores más básicos pueden especificarse sin código, simplemente escribiendo la palabra correspondiente (por supuesto en inglés). Por ejemplo: 
+	<span class="B">&lt;FONT COLOR="blue"&gt;...&lt;/FONT&gt;</span>, <span class="B">&lt;FONT COLOR="red"&gt;...&lt;/FONT&gt;</span>, etc.</li>
+	</ol>
+</li>
+<li>Se puede especificar <b>el tamaño de la fuente</b> con la etiqueta <span class="B">&lt;FONT SIZE="?"&gt;...&lt;/FONT&gt;</span>. El valor del tamaño ("?") 
+deseado puede suministrarse de manera absoluta (un número del 1 al 7) o relativa (+1, +2, -1, -2, etc., teniendo en cuenta que el valor por defecto es 
+3).<a name="ll6"></a><a href="#n6"><sup>6</sup></a></li>
+<li>Todas estas etiquetas se pueden combinar, de modo que con una sola se controla, por ejemplo, el tipo, el tamaño y el color de los caracteres: 
+<span class="B">&lt;FONT FACE="Arial" COLOR="#0000FF" SIZE="5"&gt;...&lt;/FONT&gt;</span>.</li>
+</ul>
+
+<p class="abstract">Con esta etiqueta hemos visto ya la sintaxis básica de las etiquetas HTML, que podíamos formalizar así: &lt;ETIQUETA [ATRIBUTO="valor"]&gt;.</p> 
+<p class="abstract">Lo anterior quiere decir que una etiqueta HTML (por ejemplo, FONT) puede llevar uno o varios atributos (FACE, COLOR, SIZE), cuyos valores se 
+colocan entrecomillados tras el signo igual (="arial", ="#0000FF", etc.).</p>
+<p class="abstract">Esto será válido para todas las etiquetas HTML que veamos a partir de este momento.</p>
+
+<ul>
+<li>Volvamos a nuestro documento web y practiquemos con las posibilidades de la etiqueta <span class="B">&lt;FONT&gt;</span>. Por ejemplo:</li></ul>
+
+<div align="center"><table width="60%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 3</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;TITLE&gt;Ejemplo 3&lt;/TITLE&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>Esto es texto simple: cada navegador lo visualizará según su configuración por defecto.</td></tr>
+<tr class="tabla"><td>&lt;FONT SIZE="1"&gt;Este texto es tamaño 1.&lt;/FONT&gt;</td></tr>
+<tr class="tabla"><td>&lt;FONT SIZE="2"&gt;Este texto es tamaño 2.&lt;/FONT&gt;</td></tr>
+<tr class="tabla"><td>&lt;FONT SIZE="4"&gt;Este texto es tamaño 4.&lt;/FONT&gt;</td></tr>
+<tr class="tabla"><td>&lt;FONT SIZE="+1"&gt;Este texto es tamaño +1 (que es lo mismo que tamaño 4).&lt;/FONT&gt;</td></tr>
+<tr class="tabla"><td>&lt;FONT FACE="Arial" SIZE="5" COLOR="FFFF00"&gt;Este texto posee varias especificaciones de formato.&lt;/FONT&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_03.html&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+<ul>
+<li>Nuestra página web, tal y como está diseñada en el Ejemplo 3, no posee ninguna especificación de líneas. A pesar de que las etiquetas están ordenadas en 
+varias líneas, el navegador coloca todos los caracteres seguidos (sólo tiene en cuenta un único espacio entre palabras). Para corregir este problema podemos 
+utilizar la etiqueta <span class="B">&lt;BR&gt;</span>, que introduce un salto de línea. Nuestro página quedaría entonces así:</li>
+</ul>
+
+<div align="center"><table width="60%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 4</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;TITLE&gt;Ejemplo 4&lt;/TITLE&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>Esto es texto simple: cada navegador lo visualizará según su configuración por defecto.&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;FONT SIZE="1"&gt;Este texto es tamaño 1.&lt;/FONT&gt;&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;FONT SIZE="2"&gt;Este texto es tamaño 2.&lt;/FONT&gt;&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;FONT SIZE="4"&gt;Este texto es tamaño 4.&lt;/FONT&gt;&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;FONT SIZE="+1"&gt;Este texto es tamaño +1 (que es lo mismo que tamaño 4).&lt;/FONT&gt;&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;FONT FACE="Arial" SIZE="5" COLOR="FFFF00"&gt;Este texto posee varias especificaciones de formato.&lt;/FONT&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_04.html&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+<p class="abstract">Hay otra cuestión importante que debe saberse sobre la etiqueta &lt;FONT&gt;: es la etiqueta más básica, y conviene empezar a aprender por 
+ella, pero está en desuso y desaparecerá en las versiones futuras de HTML. En su lugar, existen otras etiquetas más potentes, que iremos viendo en su momento.</p>
+
+<a name="32"></a><h2>3.2. Etiquetas de formato de caracteres</h2>
+<ul>
+<li>A partir de este momento, se trata simplemente de añadir más etiquetas a nuestra aún pequeña colección, de modo que vayamos teniendo cada vez más control 
+sobre el formato de los caracteres. La tabla siguiente muestra las más comunes:</li></ul>
+<div align="center"><table cellspacing="0" cellpadding="2">
+<tbody><tr class="filatitulo"><td>Código</td><td>Función</td></tr>
+<tr class="filazul"><td><span class="B">&lt;B&gt;...&lt;/B&gt;</span></td><td>Negrita</td></tr>
+<tr class="filagris"><td><span class="B">&lt;I&gt;...&lt;/I&gt;</span></td><td>Cursiva</td></tr>
+<tr class="filazul"><td><span class="B">&lt;U&gt;...&lt;/U&gt;</span></td><td>Subrayado</td></tr>
+<tr class="filagris"><td><span class="B">&lt;SUB&gt;...&lt;/SUB&gt;</span></td><td>Subíndice</td></tr>
+<tr class="filazul"><td><span class="B">&lt;SUP&gt;...&lt;/SUP&gt;</span>&nbsp;&nbsp;</td><td>Superíndice</td></tr>
+</tbody></table></div>
+<ul>
+<li>Hay que realizar algunos comentarios sobre las etiquetas precedentes:
+<ol>
+<li>Existe otra etiqueta similar a <span class="B">&lt;B&gt;</span>, menos utilizada porque depende de las opciones de configuración del navegador: 
+<span class="B">&lt;STRONG&gt;...&lt;/STRONG&gt;</span>.</li>
+<li>Existe otra etiqueta similar a <span class="B">&lt;I&gt;</span>, menos utilizada porque depende de las opciones de configuración del navegador: 
+<span class="B">&lt;EM&gt;...&lt;/EM&gt;</span>.</li>
+<li>Conviene tener cuidado a la hora de manejar el subrayado, puesto que éste se utiliza convencionalmente para indicar los hiperenlaces, y podría por tanto 
+resultar confuso para el usuario.</li>
+</ol></li>
+<li>Es normal utilizar varias etiquetas para un mismo elemento de texto. En ese caso, hay que tener cuidado para encajarlas correctamente. Por ejemplo:<br>
+<span class="B">&lt;FONT FACE="Courier"&gt;&lt;B&gt;&lt;I&gt;...&lt;/I&gt;&lt;/B&gt;&lt;/FONT&gt;</span> es correcto, pero<br>
+<span class="B">&lt;FONT FACE="Courier"&gt;&lt;B&gt;&lt;I&gt;...&lt;/FONT&gt;&lt;B&gt;&lt;/I&gt;</span> es incorrecto.</li>
+</ul>
+
+<a name="33"></a><h2>3.3. Otras etiquetas de caracteres</h2>
+<ul>
+<li>Hay muchas otras etiquetas que afectan a los caracteres. Vamos a presentar varias más, que deben manejarse con cierta precaución:
+<ol>
+<li>La etiqueta <span class="B">&lt;PRE&gt;...&lt;/PRE&gt;</span> indica que el texto afectado está preformateado, de modo que el navegador sí tiene en cuenta 
+todos los espacios y saltos de línea definidos en la pantalla.</li>
+<li>La etiqueta <span class="B">&lt;BLINK&gt;...&lt;/BLINK&gt;</span> indica texto parpadeante. Sólo funciona con Netscape.</li>
+<li>La etiqueta <span class="B">&lt;S&gt;...&lt;/S&gt;</span> genera texto tachado.</li>
+<li>La etiqueta <span class="B">&lt;TT&gt;...&lt;/TT&gt;</span> genera texto similar al de una máquina de escribir (fuente courier de paso fijo).</li>
+<li>La etiqueta <span class="B">&lt;BIG&gt;...&lt;/BIG&gt;</span> aumenta el tamaño de letra (equivale a <span class="B">&lt;FONT SIZE="+1"&gt;</span>).</li>
+<li>La etiqueta <span class="B">&lt;SMALL&gt;...&lt;/SMALL&gt;</span> disminuye el tamaño de letra (equivale a <span class="B">&lt;FONT SIZE="-1"&gt;</span>).</li>
+</ol></li></ul>
+<br>
+<div align="right"><table cellspacing="0" width="50%" cellpadding="2">
+<tbody><tr class="filatitulo"><td align="center">EJERCICIO 1</td></tr>
+<tr class="filazul"><td class="abstract"><i>Ya es hora de practicar con las herramientas que 
+hemos presentado hasta ahora. ¿Cómo? Es muy sencillo: ¡crea una página web!</i></td></tr>
+<tr class="filazul"><td class="abstract"><i>Si no se te ocurre nada, te propongo que 
+reproduzcas <a href="JavaScript:openPopWin(&quot;Elementos/Ejercicio_1.htm&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, 
+&quot;cen&quot;)">esta página</a>. Para que no tengas que teclearlo todo, <a href="JavaScript:openPopWin(&quot;Elementos/Ejercicio_1_texto.htm&quot;, 
+800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">aquí</a> tienes el archivo de texto, de modo que, si 
+quieres, no tienes más que pegarlo en tu editor y colocar las etiquetas correspondientes en los 
+lugares adecuados.</i></td></tr>
+<tr class="filazul"><td class="abstract"><i>(Por cierto: las fuentes que he utilizado son Arial 
+y Comic Sans MS.)</i></td></tr>
+</tbody></table></div>
+
+
+
+<br><br>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr>
+<td align="right"><a href="#top"><img src="../../Componentes/top.jpg" alt="volver al inicio" width="15" height="15" border="0"><br>
+<div class="top">inicio</div></a></td></tr></tbody></table>
+
+<a name="4"></a><h1>4. Los párrafos de un documento HTML</h1>
+<p class="abstract">En el apartado anterior hemos aprendido a controlar la apariencia de los caracteres. (Recuerda, de todas maneras, que la etiqueta &lt;FONT&gt; 
+está en desuso.) Vamos ahora a estudiar las etiquetas fundamentales que controlan la organización de los párrafos en un texto más complejo.</p>
+<ul>
+<li>Ya conocemos un tag que afecta a las líneas: <span class="B">&lt;BR&gt;</span>. Si deseamos que una línea no se parta al llegar al final de la ventana del 
+navegador, debemos colocar al comienzo la etiqueta <span class="B">&lt;NOBR&gt;</span>, y el navegador colocará entonces un <i>scroll</i> o barra de desplazamiento 
+horizonal.</li>
+<li>Por supuesto, si queremos que haya más líneas, al final sí deberá aparecer <span class="B">&lt;BR&gt;</span>.</li>
+</ul>
+
+<a name="41"></a><h2>4.1. Los párrafos y su alineamiento</h2>
+<ul>
+<li>La etiqueta <span class="B">&lt;BR&gt;</span> inserta un salto de línea, pero no un salto de párrafo.<a name="ll7"></a><a href="#n7"><sup>7</sup></a> En 
+cambio, la etiqueta <span class="B">&lt;P&gt;...&lt;/P&gt;</span> inserta una salto de línea y una línea en blanco, por lo que, en la práctica, equivale a un 
+nuevo párrafo.</li>
+<li>Por supuesto, tanto <span class="B">&lt;BR&gt;</span> como <span class="B">&lt;P&gt;...&lt;/P&gt;</span> pueden repetirse varias veces seguidas para dejar más 
+distancia entre las líneas y los párrafos.</li>
+<li>De todas maneras, sólo podemos separar los párrafos con líneas completas (una, dos, etc.), pero no podemos controlar el espacio entre los párrafos con la 
+precisión que permite, por ejemplo, el programa Word (con las opciones de espaciado anterior y posterior).<a name="ll8"></a><a href="#n8"><sup>8</sup></a></li>
+<li>Un párrafo puede alinearse introduciendo los siguientes atributos en la etiqueta habitual:</li>
+</ul>
+<div align="center"><table cellspacing="0" cellpadding="2">
+<tbody><tr class="filatitulo"><td>Código</td><td>Función</td></tr>
+<tr class="filagris"><td><span class="B">&lt;P align="left"&gt;...&lt;/P&gt;</span></td><td>Párrafo alineado a la izquierda&nbsp;&nbsp;</td></tr>
+<tr class="filazul"><td><span class="B">&lt;P align="center"&gt;...&lt;/P&gt;&nbsp;&nbsp;</span></td><td>Párrafo centrado</td></tr>
+<tr class="filagris"><td><span class="B">&lt;P align="right"&gt;...&lt;/P&gt;</span></td><td>Párrafo alienado a la derecha</td></tr>
+<tr class="filazul"><td><span class="B">&lt;P align="justify"&gt;...&lt;/P&gt;</span></td><td>Párrafo justificado</td></tr>
+</tbody></table></div>
+<ul>
+<li>Las etiquetas anteriores permiten alinear los párrafos enteros, pero siempre dejando una línea vacía delante de cada uno de ellas. ¿Hay alguna manera de 
+alinear independientemente líneas o grupos de líneas? Sí, con las siguientes etiquetas:</li>
+</ul>
+<div align="center"><table cellspacing="0" cellpadding="2">
+<tbody><tr class="filatitulo"><td>Código</td><td>Función</td></tr>
+<tr class="filagris"><td><span class="B">&lt;DIV align="left"&gt;...&lt;/DIV&gt;</span></td><td>Línea(s) alineada(s) a la izquierda&nbsp;&nbsp;</td></tr>
+<tr class="filazul"><td><span class="B">&lt;DIV align="center"&gt;...&lt;/DIV&gt;&nbsp;&nbsp;</span></td><td>Línea(s) centrada(s)</td></tr>
+<tr class="filagris"><td><span class="B">&lt;DIV align="right"&gt;...&lt;/DIV&gt;</span></td><td>Línea(s) alineada(s) a la derecha</td></tr>
+<tr class="filazul"><td><span class="B">&lt;DIV align="justify"&gt;...&lt;/DIV&gt;</span></td><td>Línea(s) alineada(s) justificadas</td></tr>
+</tbody></table></div>
+<ul>
+<li>En definitiva, disponemos de varias etiquetas similares para la creación y la alineación de los párrafos, que serán más o menos apropiadas dependiendo de las 
+ocasiones. Veamos cómo funcionan en una página web:</li>
+</ul>
+
+<div align="center"><table width="60%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 5</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;TITLE&gt;Ejemplo 5&lt;/TITLE&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;P align="left"&gt;Este párrafo está alineado a la izquierda. En la práctica, equivale sencillamente a la misma etiqueta sin indicación 
+de alineación.&lt;/P&gt;</td></tr>
+<tr class="tabla"><td>&lt;P align="center"&gt;Este párrafo está centrado. Hay una línea en blanco entre este párrafo y el anterior.&lt;/P&gt;</td></tr>
+<tr class="tabla"><td>&lt;P&gt;Ahora vamos a alinear tres líneas seguidas de tres maneras diferentes, pero sin dejar líneas vacías entre ellas, por medio de otras 
+etiquetas:&lt;/P&gt;</td></tr>
+<tr class="tabla"><td>&lt;DIV align="left"&gt;alineado izquierdo alineado izquierdo alineado izquierdo alineado izquierdo&lt;/DIV&gt;</td></tr>
+<tr class="tabla"><td>&lt;DIV align="center"&gt;alineado centrado alineado centrado alineado centrado alineado centrado&lt;/DIV&gt;</td></tr>
+<tr class="tabla"><td>&lt;DIV align="right"&gt;alineado derecho alineado derecho alineado derecho alineado derecho &lt;/DIV&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_05.html&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+<ul>
+<li>Otra etiqueta que afecta a la alineación de los párrafos es <span class="B">&lt;BLOCKQUOTE&gt;...&lt;BLOCKQUOTE&gt;</span>, que introduce una doble sangría, 
+derecha e izquierda. Pueden colocarse varias etiquetas seguidas para acentuar la sangría, como se observa en el siguiente ejemplo:</li>
+</ul>
+
+<div align="center"><table width="60%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 6</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;TITLE&gt;Ejemplo 6&lt;/TITLE&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;P&gt;Párrafo normal Párrafo normal Párrafo normal Párrafo normal Párrafo normal Párrafo normal Párrafo normal Párrafo normal.&lt;/P&gt;</td></tr>
+<tr class="tabla"><td>&lt;P&gt;&lt;BLOCKQUOTE&gt;Párrafo con una sangría izquierda-derecha Párrafo con una sangría izquierda-derecha Párrafo con una sangría 
+izquierda-derecha Párrafo con una sangría izquierda-derecha.&lt;/BLOCKQUOTE&gt;&lt;/P&gt;</td></tr>
+<tr class="tabla"><td>&lt;P&gt;&lt;BLOCKQUOTE&gt;&lt;BLOCKQUOTE&gt;&lt;BLOCKQUOTE&gt;Párrafo con tres sangrías izquierda-derecha Párrafo con tres sangrías 
+izquierda-derecha Párrafo con tres sangrías izquierda-derecha Párrafo con tres sangrías izquierda-derecha.&lt;/BLOCKQUOTE&gt;&lt;/BLOCKQUOTE&gt;&lt;/BLOCKQUOTE
+&gt;&lt;/P&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_06.html&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+<a name="42"></a><h2>4.2. Los títulos</h2>
+<ul>
+<li>Pueden utilizarse hasta seis tipos de títulos en un documento HTML, ordenados jerárquicamente por medio de la etiqueta 
+<span class="B">&lt;Hn&gt;...&lt;/Hn&gt;</span>, donde n = 1 a 6.</li>
+<li>Las etiquetas de los títulos introducen una línea superior en blanco. Como lo habitual después de un título es un nuevo párrafo 
+(<span class="B">&lt;P&gt;</span>), que también introduce su propia línea, el resultado final suele ser que una línea de título tiene una línea en blanco antes y 
+otra después.</li>
+<li>Las etiquetas de los títulos admiten indicaciones de alineación, de la misma manera que la etiqueta de párrafo.</li>
+<li>Veamos qué aspecto tienen los títulos de un documento HTML:</li>
+</ul>
+
+<div align="center"><table width="60%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 7</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;TITLE&gt;Ejemplo 7&lt;/TITLE&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;H1&gt;Título 1&lt;/H1&gt;</td></tr>
+<tr class="tabla"><td>&lt;H2&gt;Título 2&lt;/H2&gt;</td></tr>
+<tr class="tabla"><td>&lt;H3&gt;Título 3&lt;/H3&gt;</td></tr>
+<tr class="tabla"><td>&lt;H4&gt;Título 4&lt;/H4&gt;</td></tr>
+<tr class="tabla"><td>&lt;H5&gt;Título 5&lt;/H5&gt;</td></tr>
+<tr class="tabla"><td>&lt;H6&gt;Título 6&lt;/H6&gt;</td></tr>
+<tr class="tabla"><td>&lt;H7&gt;Título 7 (como no existe, no supone ningún cambio)&lt;/H7&gt;</td></tr>
+<tr class="tabla"><td>&lt;P&gt;Además, los títulos pueden recibir indicaciones de alineación, como en los siguientes ejemplos&lt;/P&gt;</td></tr>
+<tr class="tabla"><td>&lt;H3 align="center"&gt;Título centrado&lt;/H3&gt;</td></tr>
+<tr class="tabla"><td>&lt;H3 align="right"&gt;Título a la derecha&lt;/H3&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_07.html&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+<ul>
+<li>Este ejemplo permite plantear el siguiente ejercicio:</li>
+</ul>
+
+<div align="right"><table cellspacing="0" width="50%" cellpadding="2">
+<tbody><tr class="filatitulo"><td align="center">EJERCICIO 2</td></tr>
+<tr class="filazul"><td class="abstract"><i>En el <a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_07.html&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">EJEMPLO 
+7</a> se observa que siempre queda una línea en blanco entre un título y el párrafo siguiente (el
+que comienza con "Además". ¿Cómo puede suprimirse dicha línea? Elimina, por ejemplo, la que 
+hay entre el título 7 y el párrafo siguiente.</i></td></tr>
+<tr class="filazul"><td class="abstract"><i>¿Sabes solucionarlo? ¿Te parece fácil? Eso quiere 
+decir que has entendido estupendamente todo lo expuesto hasta el momento.</i></td></tr>
+<tr class="filazul"><td class="abstract"><i>¿No lo has conseguido? No pasa nada, pero tal vez 
+deberías repasar todo lo anterior con más detalle. En cualquier caso, <a href="JavaScript:openPopWin(&quot;Elementos/Ejercicio_2_texto.html&quot;, 500, 300, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">aquí</a> 
+tienes la solución.</i></td></tr>
+</tbody></table></div>
+
+<a name="43"></a><h2>4.3. Las listas</h2>
+<ul>
+<li>Las listas son elementos que, como los títulos, permiten presentar niveles jerarquizados de texto.</li>
+<li>Los documentos HTML permiten dos tipos de listas:
+<ol>
+<li>Listas no ordenadas (<i>bullet list</i>): su etiqueta principal es <span class="B">&lt;UL&gt;...&lt;/UL&gt;</span>.</li>
+<li>Listas ordenadas o numeradas (<i>numbered list</i>): su etiqueta principal es <span class="B">&lt;OL&gt;...&lt;/OL&gt;</span>.</li>
+<li>Listas de definiciones (<i>definition list</i>): su etiqueta principal es <span class="B">&lt;DL&gt;...&lt;/DL&gt;</span></li>.
+</ol></li>
+<li>Una vez definido el tipo de lista deseada, los elementos que la componen se marcan de distinta manera según el tipo:
+<ol>
+<li>En las listas ordenadas (<span class="B">&lt;OL&gt;...&lt;/OL&gt;</span>) o no ordenadas (<span class="B">&lt;UL&gt;...&lt;/UL&gt;</span>), cada elemento de 
+dicha lista se marca con la etiqueta <span class="B">&lt;LI&gt;...&lt;/LI&gt;</span> (<i>list item</i>).</li>
+<li>En las listas de definición (<span class="B">&lt;DL&gt;...&lt;/DL&gt;</span>), se utilizan dos: cada elemento que se define se marca con
+<span class="B">&lt;DT&gt;...&lt;/DT&gt;</span> y el texto de cada definición se marca con <span class="B">&lt;DD&gt;...&lt;/DD&gt;</span>. Esta etiqueta se puede 
+repetir si se necesita introducir varios elementos de definición.</li>
+</ol>
+</li>
+<li>Las listas se pueden encajar unas dentro de otras, además de con el resto de las etiquetas disponibles. Vemos algún ejemplo:</li>
+</ul>
+
+<div align="center"><table width="40%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 8</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;TITLE&gt;Ejemplo 8&lt;/TITLE&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;H3&gt;Los meses de primavera&lt;/H3&gt;</td></tr>
+<tr class="tabla"><td>&lt;UL&gt;<br>&lt;LI&gt;Abril&lt;/LI&gt;<br>&lt;LI&gt;Mayo&lt;/LI&gt;<br>&lt;LI&gt;Junio&lt;/LI&gt;<br>&lt;/UL&gt;</td></tr>
+<tr class="tabla"><td>&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;H3&gt;Los meses de verano&lt;/H3&gt;</td></tr>
+<tr class="tabla"><td>&lt;OL&gt;<br>&lt;LI&gt;Julio&lt;/LI&gt;<br>&lt;LI&gt;Agosto&lt;/LI&gt;<br>&lt;LI&gt;Septiembre&lt;/LI&gt;<br>&lt;/OL&gt;</td></tr>
+<tr class="tabla"><td>&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;H3&gt;Los meses del año&lt;/H3&gt;</td></tr>
+<tr class="tabla"><td>&lt;UL&gt;<br>&lt;LI&gt;Los meses de primavera<br>&lt;OL&gt;<br>&lt;LI&gt;Abril&lt;/LI&gt;<br>&lt;LI&gt;Mayo&lt;/LI&gt;<br>
+&lt;LI&gt;Junio&lt;/LI&gt;<br>&lt;/OL&gt;<br>&lt;/LI&gt;<br>&lt;LI&gt;Los meses de verano<br>&lt;OL&gt;<br>&lt;LI&gt;Julio&lt;/LI&gt;<br>
+&lt;LI&gt;Agosto&lt;/LI&gt;<br>&lt;LI&gt;Septiembre&lt;/LI&gt;<br>&lt;/OL&gt;<br>&lt;/LI&gt;<br>&lt;/UL&gt;</td></tr>
+<tr class="tabla"><td>&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;H3&gt;Refranes de los meses&lt;/H3&gt;</td></tr>
+<tr class="tabla"><td>&lt;DL&gt;<br>&lt;DT&gt;Marzo&lt;/DT&gt;<br>&lt;DD&gt;El sol de marzo da con el mazo.&lt;/DD&gt;<br>&lt;DT&gt;Abril&lt;/DT&gt;<br>
+&lt;DD&gt;El abril, aguas mil.&lt;/DD&gt;<br>&lt;DT&gt;Mayo&lt;/DT&gt;<br>&lt;DD&gt;Hasta el 40 de mayo no te quites el sayo.&lt;/DD&gt;<br>&lt;/DL&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_08.html&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+<ul>
+<li>Las listas admiten varios parámetros, que varían según el tipo de lista:
+<ol>
+<li>Las tres listas admiten el parámetro <span class="B">COMPACT</span>, que hace que el navegador presente la lista de la manera más compacta posible.</li>
+<li>El parámetro <span class="B">TYPE</span> funciona con las dos primeras listas. Sus valores respectivos son, lógicamente, distintos:
+	<ul>
+	<li>En las no numeradas, controla el tipo de viñeta: con forma de disco (<span class="B">&lt;UL type="disc"&gt;</span>, la opción por defecto), de círculo 
+	(<span class="B">&lt;UL type="circle"&gt;</span>) y de cuadrado (<span class="B">&lt;UL type="square"&gt;</span>).</li>
+	<li>En las numeradas, controla el tipo de numeración: con números árabes (<span class="B">&lt;OL type="1"&gt;</span>, la opción por defecto), romanos 
+	(<span class="B">&lt;OL type="I"&gt;</span>), romanos en minúsculas (<span class="B">&lt;OL type="i"&gt;</span>), letras mayúsculas 
+	(<span class="B">&lt;OL type="A"&gt;</span>) y minúsculas (<span class="B">&lt;OL type="a"&gt;</span>).</li>
+	</ul>
+</li>
+<li>La etiqueta <span class="B">&lt;OL start="n"&gt;</span> indica el número por el que empieza la lista numerada.</li>
+<li>En una lista numerada, se puede cambiar el número de un elemento –y consiguientemente de los posteriores– con la etiqueta 
+<span class="B">&lt;LI value="n"&gt;</span>.</li> 
+</ol>
+</li>
+</ul>
+
+<a name="44"></a><h2>4.4. Las rayas horizontales</h2>
+<ul>
+<li>Las rayas horizontales son otro de los procedimientos habituales para separar los contenidos de un documento HTML. Se introducen simplemente con la etiqueta 
+<span class="B">&lt;HR&gt;</span>.</li>
+<li>Hay una serie de características de las rayas que pueden controlarse, como siempre, por medio de parámetros añadidos a la etiqueta básica:
+<ol>
+<li><b>El tamaño</b>: la etiqueta <span class="B">&lt;HR&gt;</span> introduce una raya que ocupa todo el ancho de la pantalla. Pueden especificarse distintas 
+anchuras añadiendo el valor deseado, expresado en pixeles (<span class="B">&lt;HR width="n"&gt;</span>) o en términos porcentuales 
+(<span class="B">&lt;HR width="n%"&gt;</span>).<a name="ll9"></a><a href="#n9"><sup>9</sup></a></li>
+<li><b>La alineación</b>: cuando una raya ocupa sólo una parte de la pantalla, puede especificarse su alineación por medio de las etiquetas habituales:<br>
+<div align="center"><span class="B">&lt;HR align="left"&gt;<br>
+&lt;HR align="center"&gt;<br>
+&lt;HR align="right"&gt;</span></div></li>
+<li><b>La altura</b>: se expresa en píxeles por medio de la etiqueta <span class="B">&lt;HR size="n"&gt;</span>. Puede adoptar el valor 0 (la raya más fina).</li>
+<li><b>El color</b>, por medio del párametro habitual: <span class="B">&lt;HR color="?"&gt;</span>.</li>
+<li><b>El sombreado</b>: la raya posee habitualmente un pequeño efecto de sombreado, que puede eliminarse con la etiqueta 
+<span class="B">&lt;HR noshade&gt;</span>.<a name="ll10"></a><a href="#n10"><sup>10</sup></a></li>
+</ol>
+</li>
+<li>Como siempre, lo habitual suele ser la combinación de varios parámetros en una misma etiqueta. Por ejemplo:<br>
+<div align="center"><span class="B">&lt;HR width="50%" size="0" align="center"&gt;</span></div></li>
+<li>No queda sino practicar con las distintas posibilidades de rayas. Por ejemplo:</li>
+</ul>
+
+<div align="center"><table width="60%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 9</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;TITLE&gt;Ejemplo 9&lt;/TITLE&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>Ésta es una línea normal:</td></tr>
+<tr class="tabla"><td>&lt;HR&gt;</td></tr>
+<tr class="tabla"><td>Ésta es una línea normal, sin sombreado:</td></tr>
+<tr class="tabla"><td>&lt;HR noshade&gt;</td></tr>
+<tr class="tabla"><td>Ésta es una línea que ocupa la mitad de la pantalla (si no se establece la alineación, se coloca centrada por defecto):</td></tr>
+<tr class="tabla"><td>&lt;HR width="50%"&gt;</td></tr>
+<tr class="tabla"><td>Ésta es más estrecha y mucho más gorda:</td></tr>
+<tr class="tabla"><td>&lt;HR width="10%" size="20"&gt;</td></tr>
+<tr class="tabla"><td>Ésta es igual pero de color rojo:</td></tr>
+<tr class="tabla"><td>&lt;HR width="10%" size="20" color="#FF0000"&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_09.html&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+
+<br><br>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr>
+<td align="right"><a href="#top"><img src="../../Componentes/top.jpg" alt="volver al inicio" width="15" height="15" border="0"><br>
+<div class="top">inicio</div></a></td></tr></tbody></table>
+
+
+<a name="5"></a><h1>5. Los enlaces de un documento HTML</h1>
+<ul>
+<li>En los apartados anteriores hemos aprendido a manejar correctamente el elemento fundamental de todo documento: el texto. Sin embargo, hay otro elemento básico 
+en un documento HTML, que le proporciona su mayor potencial: los hiperenlaces, que estudiaremos en este apartado.</li>
+<li>Un hiperenlace es un vínculo que une un elemento del documento activo (por ejemplo, una palabra) con otro, de manera que activamos ese segundo elemento 
+simplemente con un <i>click</i> del ratón en el primero.<a name="ll11"></a><a href="#n11"><sup>11</sup></a></li>
+<li>La sintaxis general de la etiqueta es muy simple: <span class="B">&lt;A HREF="destino"&gt;...&lt;/A&gt;</span>. (Los puntos suspensivos representan el 
+elemento enlazado.)</li>
+<li>Para que el destino se abra en una ventana nueva, hay que indicar el siguiente atributo: <span class="B">&lt;A HREF="destino" target="_blank"&gt;...&lt;/A&gt;</span></li>
+<li>El destino de un hiperenlace puede ser de tres tipos:
+<ol>
+<li><b>Enlace externo</b>: otro documento HTML situado en un ordenador remoto.</li>
+<li><b>Enlace local</b>: otro documento HTML situado en el mismo ordenador.</li>
+<li><b>Ancla</b>: otro lugar dentro del mismo documento HTML.</li>
+</ol></li>
+<li>Vamos a examinar separadamente cada uno de estos tipos.</li>
+</ul>
+
+<a name="51"></a><h2>5.1. Los enlaces externos</h2>
+<ul>
+<li>Desde cualquier punto de un documento HTML puede establecerse un enlace con cualquier recurso de Internet.</li>
+<li>Como es sabido, los recursos más habituales de Internet son:
+<ol>
+<li>La WWW, es decir, las páginas web o documentos HTML. La etiqueta correspondiente es:<br> 
+<div align="center"><span class="B">&lt;A HREF="http://servidor/camino.../fichero"&gt;...&lt;/A&gt;</span></div></li>
+<li>El correo electrónico. La etiqueta correspondiente es:<br>
+<div align="center"><span class="B">&lt;A HREF="mailto:usuario@servidor"&gt;...&lt;/A&gt;</span></div></li>
+<li>La transferencia de ficheros (servidores FTP). La etiqueta correspondiente es:<br>
+<div align="center"><span class="B">&lt;A HREF="ftp://servidor/camino.../fichero"&gt;...&lt;/A&gt;</span></div></li>
+</ol></li>
+<li>Veamos algunos ejemplos:</li></ul>
+
+<div align="center"><table width="60%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 10</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;TITLE&gt;Ejemplo 10&lt;/TITLE&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>Vamos a enlazar las palabras "pincha aquí" con algunos destinos remotos.&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>1.- Con la página web de la UD:&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;A HREF="http://www.deusto.es" target="_blank"&gt;pincha aquí&lt;/a&gt;&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>2.- Con el servidor FTP de la sede de Ginebra de la OMS:&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;A HREF="ftp://ftp.who.ch/" target="_blank"&gt;pincha aquí&lt;/a&gt;&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>3.- Con mi correo electrónico:&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;A HREF="mailto:airibar@fil.deusto.es"&gt;pincha aquí&lt;/a&gt;&lt;BR&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_10.html&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+
+<a name="52"></a><h2>5.2. Los enlaces locales</h2>
+<ul>
+<li>La mayor parte de las "páginas web" son, en rigor, una colección de páginas, puesto que la organización clásica de los sitios web consiste en un conjunto 
+ordenado de documentos HTML entrelazados y residentes en un mismo ordenador.</li>
+<li>Dentro de un mismo ordenador, los documentos HTML pueden residir en un mismo directorio o en varios:
+<ol>
+<li>Cuando todos los documentos residen en el mismo directorio no hay ningún problema, y la etiqueta será, simplemente: 
+<span class="B">&lt;A HREF="fichero.htm"&gt;...&lt;/A&gt;</span>.</li>
+<li>Cuando los ficheros residen en diferentes directorios, hay que facilitar la dirección completa del fichero, lo que puede hacerse de manera absoluta o relativa:
+<ul>
+<li>Direccionamiento absoluto: se indica la trayectoria completa del archivo en cuestión:<br>
+<div align="center"><span class="B">&lt;A HREF=file:///c:/directorio/subdirectorios/fichero.htm"&gt;...&lt;/A&gt;</span></div></li>
+<li>Direccionamiento relativo: no se indican los nombres de los directorios. Por ejemplo:<br>
+<div align="center"><span class="B">&lt;A HREF=../../..fichero.htm"&gt;...&lt;/A&gt;</span></div></li>
+</ul></li>
+</ol></li>
+<li>Aun utilizando un direccionamiento relativo, es necesario indicar los nombres de los directorios "descendentes". Por ejemplo, en una web ordenada como en la 
+figura siguiente, un enlace desde un documento situado en el directorio <b>&lt;HTML&gt;</b> a un recurso situado en el directorio <b>&lt;Imágenes&gt;</b> debería 
+especificarse así:</li>
+</ul>
+<div align="center"><span class="B">&lt;A HREF=../../../../Componentes/Imágenes/fichero.htm"&gt;...&lt;/A&gt;</span><br>
+<img src="Elementos/arbol.jpg" alt="Árbol de directorios" width="234" height="311" border="0"></div>
+
+
+<a name="53"></a><h2>5.3. Las anclas</h2>
+<ul>
+<li>Especialmente cuando el documento es largo, conviene utilizar enlaces que apunten hacia otro lugar dentro del mismo documento. Estos enlaces se denominan 
+anclas, anclajes o apuntadores.</li>
+<li>El procedimiento de enlace es doble:
+<ol>
+<li>En primer lugar, hay que establecer el punto de anclaje en el lugar del documento que vaya a ser el destino del enlace. Su etiqueta es 
+<span class="B">&lt;A NAME=nombre&gt;...&lt;/A&gt;</span>.</li>
+<li>Después sólo queda enlazar los caracteres deseados con el ancla anterior. Su etiqueta es <span class="B">&lt;A HREF=#nombre&gt;...&lt;/A&gt;</span>.</li>
+</ol></li>
+<li>Algunas observaciones sobre las anclas:
+<ol>
+<li>El nombre del ancla es arbitrario, pero lo lógico es que guarde alguna relación con el destino, especialmente cuando hay muchas en un mismo documento.</li>
+<li>Aunque la etiqueta del ancla sea pareada, lo normal es que no incluya nada entre sus dos partes (<span class="B">&lt;A NAME=nombre&gt;...&lt;/A&gt;</span>), 
+puesto que lo importante es marcar el punto de inicio del ancla, no su final.</li>
+</ol></li>
+<li>Vamos a practicar estas etiquetas creando una nota a pie de página como las utilizadas en este documento, que implican un doble anclaje:</li>
+</ul>
+
+<div align="center"><table width="60%" cellspacing="0" cellpadding="2" background="../Componentes/fondo_rayas.gif">
+<tbody><tr class="filatitulo"><td align="CENTER"><b>EJEMPLO 11</b></td></tr>
+<tr class="tabla"><td>&lt;HTML&gt;</td></tr>
+<tr class="tabla"><td>&lt;HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;TITLE&gt;Ejemplo 11&lt;/TITLE&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HEAD&gt;</td></tr>
+<tr class="tabla"><td>&lt;BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;P&gt;Al final de este párrafo vamos a colocar una nota a pie de página, de modo que al pinchar sobre la llamada, vamos a la nota, y al 
+pinchar sobre el número de nota en el pie de página, volvemos a la llamada.
+&lt;A NAME="llamada_1"&gt;&lt;/A&gt;&lt;A HREF="#nota1"&gt;&lt;SUP&gt;1&lt;/SUP&gt;&lt;/A&gt;&lt;BR&gt;&lt;P&gt;</td></tr>
+<tr class="tabla"><td>Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,
+&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; 
+Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; 
+Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; 
+Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,&lt;BR&gt; Bla,</td></tr>
+<tr class="tabla"><td>&lt;HR size="0"&gt;</td></tr>
+<tr class="tabla"><td>&lt;A NAME="nota_1"&gt;&lt;/A&gt;&lt;A HREF="#llamada_1"&gt;&lt;SUP&gt;1&lt;/SUP&gt;&lt;/A&gt;&lt;FONT SIZE="-1"&gt;Éste es el 
+texto de la nota. Si pinchamos sobre el número, volvemos a la llamada.&lt;/FONT&gt;</td></tr>
+<tr class="tabla"><td>&lt;/BODY&gt;</td></tr>
+<tr class="tabla"><td>&lt;/HTML&gt;</td></tr>
+<tr class="filagris"><td colspan="2" align="center"><a href="JavaScript:openPopWin(&quot;elementos/Ejemplo_11.html&quot;, 800, 400, &quot;scrollbars&quot;, &quot;cen&quot;, &quot;cen&quot;)">Ver resultado</a></td></tr>
+</tbody></table></div>
+
+<p class="abstract">Hemos presentado el etiquetado básico de los enlaces, su utilización y sus tipos, pero aún no somos capaces de alterar su formato predefinido. 
+Esto lo veremos en el tercer capítulo de esta serie, dedicado a <a href="HTML_3.html">Información Complementaria</a>.</p>
+
+
+<br><br>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr>
+<td align="right"><a href="#top"><img src="../../Componentes/top.jpg" alt="volver al inicio" width="15" height="15" border="0"><br>
+<div class="top">inicio</div></a></td></tr></tbody></table>
+
+<h1>Notas</h1>
+<table cellspacing="0" cellpadding="2" class="tabla">
+<tbody><tr>
+<td valign="top"><a name="n1"></a><a href="#ll1"><sup>1</sup></a></td>
+<td>HTML es el acrónimo de <i>HyperText Markup Language</i>. Para redactar este apartado me he valido en buena medida del trabajo de Luc Van Lancker <a href="http://www.ccim.be/ccim328/htmlsp/index.htm">Aprender el lenguaje Html</a>.</td>
+</tr>
+<tr>
+<td valign="top"><a name="n2"></a><a href="#ll2"><sup>2</sup></a></td>
+<td>El código ASCII (<i>American Standard Code for Information Interchange</i>) es el más extendido de los muchos sistemas de codificación informática, es decir, 
+maneras de representar las informaciones (letras, números, etc.) con bits (esto es, ceros y unos).</td>
+</tr>
+<tr>
+<td valign="top"><a name="n3"></a><a href="#ll3"><sup>3</sup></a></td>
+<td>Escribiremos todas las etiquetas con color, como suelen aparecer, por mera convención visual, en los programas editores de HTML.</td>
+</tr>
+<tr>
+<td valign="top"><a name="n4"></a><a href="#ll4"><sup>4</sup></a></td>
+<td>El Cuaderno de Notas de Windows, por su propia simplicidad, genera código ASCII simple. Los procesadores de textos más potentes (Word y otros) generan 
+códigos propios, que entorpecen en este caso su conversión a HTML.</td>
+</tr>
+<tr>
+<td valign="top"><a name="n5"></a><a href="#ll5"><sup>5</sup></a></td>
+<td>Las etiquetas no se ven afectadas por mayúsculas o minúsculas, por lo que da igual escribir 
+<span class="B">&lt;HTML&gt;</span>, <span class="B">&lt;Html&gt;</span>, 
+<span class="B">&lt;html&gt;</span>, etc.</td>
+</tr>
+<tr>
+<td valign="top"><a name="n6"></a><a href="#ll6"><sup>6</sup></a></td>
+<td>Las etiquetas <span class="B">&lt;FONT SIZE="+1"&gt;</span> y <span class="B">&lt;FONT SIZE="-1"&gt;</span> 
+equivalen respectivamente a las etiquetas <span class="B">&lt;BIG&gt;</span> y 
+<span class="B">&lt;SMALL&gt;</span>.</td>
+</tr>
+<tr>
+<td valign="top"><a name="n7"></a><a href="#lL7"><sup>7</sup></a></td>
+<td>Equivale a la combinación &lt;Shift&gt;+Intro del procesador de textos Word.</td>
+</tr>
+<tr>
+<td valign="top"><a name="n8"></a><a href="#ll8"><sup>8</sup></a></td>
+<td>Por supuesto, sí hay procedimientos HTML para controlar estas distancias con exactitud, pero son de mayor nivel y no se presentan en este capítulo.</td>
+</tr>
+<tr>
+<td valign="top"><a name="n9"></a><a href="#ll9"><sup>9</sup></a></td>
+<td>La información relativa a los tamaños suele facilitarse más en términos porcentuales que en pixeles, porque depende menos de las opciones de configuración de 
+cada navegador. Así por ejemplo, una raya de 100 pixeles ocupará más en una pantalla configurada a 800 x 600 pixeles que en otra configurada a 1024 x 768. Sin 
+embargo, en cualquier configuración, una raya definida por ejemplo con el 75% siempre ocupará lo mismo.</td>
+</tr>
+<tr>
+<td valign="top"><a name="n10"></a><a href="#ll10"><sup>10</sup></a></td>
+<td>Tampoco tiene efectos de sombreado con el valor <span class="B">&lt;HR size="0"&gt;</span>.</td>
+</tr>
+<tr>
+<td valign="top"><a name="n11"></a><a href="#ll11"><sup>11</sup></a></td>
+<td>Este sistema de hipertexto ha sido utilizado por los ficheros de ayuda de Windows (y aun antes, en las últimas versiones del MS-Dos), y hoy en día es un 
+procedimiento habitual en un número creciente de aplicaciones.</td>
+</tr>
+</tbody></table>
+
+
+<br><br>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr>
+<td align="right"><a href="#top"><img src="../../Componentes/top.jpg" alt="volver al inicio" width="15" height="15" border="0"><br>
+<div class="top">inicio</div></a></td></tr></tbody></table>
+
+
+<table width="100%" cellspacing="0" background="../../Componentes/fondo_azul_claro.gif">
+<tbody><tr><td class="linksinternos"><b><a href="../../Index.html">Alexander Iribar</a> &gt;&gt; 
+<a href="../../Ed_digital/Ed_digital.html">Edición digital</a></b></td></tr>
+</tbody></table>
+<table width="100%" cellspacing="0" background="../../Componentes/fondo_gris.gif">
+<tbody><tr><td class="paramail">Comentarios: <a href="mailto:alex.iribar@deusto.es">alex.iribar@deusto.es</a></td></tr></tbody></table>
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=1291223; 
+var sc_invisible=1; 
+var sc_partition=11; 
+var sc_security="9068f641"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c12.statcounter.com/counter.php?sc_project=1291223&amp;java=0&amp;security=9068f641&amp;invisible=1" alt="free hit counter javascript" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+
+
+</body></html>
